@@ -35,7 +35,7 @@ int main(){
     //sort the data using vector
     vector< pair <float,float> > vect;
     for (int m = 0; m < count; m++){
-        vect.push_back(make_pair(sqrt((ar[m][0]+ar[m][1])),m));
+        vect.push_back(make_pair(sqrt(((ar[m][0]*ar[m][0])+(ar[m][1]*ar[m][1]))),m));
     }
     sort(vect.begin(),vect.end());
 
@@ -51,6 +51,7 @@ int main(){
         for (int j=0; j<2; j++){
             OFile << ar[(int)vect[i].second][j] << " ";
         }
+        OFile<<"\t\t"<<vect[i].first;
         OFile<<endl;
     }
     return 0;
